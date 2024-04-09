@@ -1,11 +1,12 @@
-from .appliances import Appliance
+from appliances.appliance import Appliance
 
-def Dryer(Appliance):
+class Dryer(Appliance):
 
-    def __init__(self, color, heat_method):
-        super.__init__(color, heat_method)
+    def __init__(self, color, heat_method, setting):
+        super().__init__(color, heat_method)
+        self.setting = setting
 
-    def dry_clothes(setting="low"):
+    def dry_clothes(self, setting):
         if setting != "low":
           print("Please allow 40 minutes for you clothes to come out crispy.")
         else:
